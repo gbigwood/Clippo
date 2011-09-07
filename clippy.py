@@ -40,6 +40,12 @@ post_text = r"""
 |
 /
 """
+clippy = "\n __  \n/  \ \n|  | \n@  @ \n|| ||\n|| ||\n|\_/|\n\___/\n"
+boxy = "\n \n      _\n     / \n     | \n     | \n  <--| \n     | \n     \_\n"
+post_text = "\n \n \n\\\n|\n|\n|\n|\n/\n"
+
+
+
 boxy = boxy.split("\n")
 clippy = clippy.split("\n")
 post_text = post_text.split("\n")

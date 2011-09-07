@@ -19,38 +19,9 @@ import math
 words_list = ["it", "looks", "like", "you", "are", "writing", "a", "letter"]
 length_of_input =  sum(len(x)+1 for x in words_list)
 max_length = 204 #70 - width of clippy and bubble * 4
-clippy = r"""
- __  
-/  \ 
-|  | 
-@  @ 
-|| ||
-|| ||
-|\_/|
-\___/
-"""
-
-boxy = r"""
-
-      _
-     / 
-     | 
-     | 
-  <--| 
-     | 
-     \_
-"""
-
-post_text = r"""
-
-
-\
-|
-|
-|
-|
-/
-"""
+clippy = "\n __  \n/  \ \n|  | \n@  @ \n|| ||\n|| ||\n|\_/|\n\___/\n"
+boxy = "\n \n      _\n     / \n     | \n     | \n  <--| \n     | \n     \_\n"
+post_text = "\n \n \n\\\n|\n|\n|\n|\n/\n"
 
 boxy = boxy.split("\n")
 clippy = clippy.split("\n")
@@ -108,3 +79,4 @@ EOF
 " Here the python code is closed. We can continue writing VimL or python again.
 endfunction
 command! -nargs=0 Clippy call Clippy()
+
