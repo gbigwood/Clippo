@@ -1,11 +1,22 @@
-"""
-Prints you a clippy using the input text you give it
-"""
 
-import sys
+if !has('python')
+    echo "Error: Required vim compiled with +python"
+    finish
+endif
+
+" Vim comments start with a double quote.
+" Function definition is VimL. We can mix VimL and Python in
+" function definition.
+function! Clippy()
+" We start the python code like the next line.
+
+python << EOF
+
+# the vim module contains everything we need to interface with vim from
+import vim
 import math
 
-words_list =sys.argv[1:] 
+words_list = ["it", "looks", "like", "you", "are", "writing", "a", "letter"]
 length_of_input =  sum(len(x)+1 for x in words_list)
 max_length = 204 #70 - width of clippy and bubble * 4
 clippy = r"""
@@ -40,6 +51,7 @@ post_text = r"""
 |
 /
 """
+
 boxy = boxy.split("\n")
 clippy = clippy.split("\n")
 post_text = post_text.split("\n")
@@ -70,10 +82,8 @@ for line in xrange(len(clippy)):
     else:
         spacer = " "
     if (line < 4) or (line == 8):#none of other words 
-        #print clippy[line],boxy[line] + (length_of_line * spacer) + 
-        #post_text[line]
         s = clippy[line]+" "+boxy[line] + ((length_of_line * spacer) + post_text[line])
-        print s
+        outgoinglines.append(s)
     elif line >= 3:#put words
         outstring = []
         outstring.append(clippy[line]+" ")
@@ -90,4 +100,11 @@ for line in xrange(len(clippy)):
             usedstring += len(this_word)+1
         outstring.append((length_of_line - usedstring) * " ")
         outstring.append(post_text[line])
-        print "".join(outstring)
+        outgoinglines.append("".join(outstring))
+
+
+vim.current.buffer.append(outgoinglines)
+EOF
+" Here the python code is closed. We can continue writing VimL or python again.
+endfunction
+command! -nargs=0 Clippy call Clippy()
