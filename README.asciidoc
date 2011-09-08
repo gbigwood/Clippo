@@ -1,6 +1,19 @@
 This is a Vim plugin that creates a Clippy for you to use in your documents.
 It features both a command line python script and a Vim plugin.
 
+             
+.Example
+---
+ __                 
+/  \        _____________ 
+|  |       /             \
+@  @       | it looks    |
+|| ||      | like you    |
+|| ||   <--| are writing |
+|\_/|      | a letter    |
+\___/      \_____________/
+---
+             
 INSTALLATION
 ============
 Copy the .vim script into your .vim/plugins folder.
