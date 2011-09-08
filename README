@@ -1,4 +1,4 @@
-This is a Vim plugin that creates a Clippy for you to use in your documents.
+Create a Clippy using selected text for your documents.
 It features both a command line python script and a Vim plugin.
  __                 
 /  \        _____________ 
@@ -28,10 +28,16 @@ Ubuntu Vim comes with +python support.
 USAGE
 =====
 
-Pass a range into the script like so:
+In Vim
+------
+You can pass a range into the command like so:
 	:1,4Clippy
 
 Or using visual select:
 	V
 Then select the lines, then clippyfy with:
 	:Clippy
+
+In Shell
+--------
+python clippy.py it looks like you are writing a letter
