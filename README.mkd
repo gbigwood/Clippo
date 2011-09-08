@@ -19,9 +19,9 @@ USAGE
 =====
 
 Pass a range into the script like so:
-    :1,4Clippy
+    `:1,4Clippy`
 
 Or using visual select:
-    V
+    `V`
 Then select the lines, then clippyfy with:
-    :Clippy
+    `:Clippy`
