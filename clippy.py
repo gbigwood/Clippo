@@ -40,9 +40,9 @@ post_text = r"""
 |
 /
 """
-clippy = "\n __  \n/  \ \n|  | \n@  @ \n|| ||\n|| ||\n|\_/|\n\___/\n"
-boxy = "\n \n      _\n     / \n     | \n     | \n  <--| \n     | \n     \_\n"
-post_text = "\n \n \n\\\n|\n|\n|\n|\n/\n"
+#clippy = "\n __  \n/  \ \n|  | \n@  @ \n|| ||\n|| ||\n|\_/|\n\___/\n"
+#boxy = "\n \n      _\n     / \n     | \n     | \n  <--| \n     | \n     \_\n"
+#post_text = "\n \n \n\\\n|\n|\n|\n|\n/\n"
 
 
 
