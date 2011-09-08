@@ -1,1 +1,27 @@
 This is a Vim plugin that creates a Clippy for you to use in your documents.
+It features both a command line python script and a Vim plugin.
+
+INSTALLATION
+============
+Copy the .vim script into your .vim/plugins folder.
+
+REQUIREMENTS
+============
+Vim must be installed with the +python extension.
+
+You can check that using the command:
+    vim --version | grep +python
+
+Ubuntu Vim comes with +python support.
+
+
+USAGE
+=====
+
+Pass a range into the script like so:
+    :1,4Clippy
+
+Or using visual select:
+    V
+Then select the lines, then clippyfy with:
+    :Clippy
