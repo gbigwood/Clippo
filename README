@@ -40,4 +40,4 @@ Then select the lines, then clippyfy with:
 
 In Shell
 --------
-python clippy.py it looks like you are writing a letter
+    python clippy.py it looks like you are writing a letter
