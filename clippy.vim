@@ -7,9 +7,9 @@ endif
 " Vim comments start with a double quote.
 " Function definition is VimL. We can mix VimL and Python in
 " function definition.
-function! Clippy()
-" We start the python code like the next line.
+function! Clippy() range
 
+" We start the python code like the next line.
 python << EOF
 
 # the vim module contains everything we need to interface with vim from
@@ -17,6 +17,15 @@ import vim
 import math
 
 words_list = ["it", "looks", "like", "you", "are", "writing", "a", "letter"]
+words_list = []
+#print int(vim.eval("a:firstline")), int(vim.eval("a:lastline"))
+for line in xrange(int(vim.eval("a:firstline"))-1, int(vim.eval("a:lastline"))):
+    line = vim.current.buffer[line]
+    #print line
+    for word in line.split():
+        #print word
+        words_list.append(word)
+
 length_of_input =  sum(len(x)+1 for x in words_list)
 max_length = 204 #70 - width of clippy and bubble * 4
 clippy = "\n __  \n/  \ \n|  | \n@  @ \n|| ||\n|| ||\n|\_/|\n\___/\n"
@@ -74,9 +83,14 @@ for line in xrange(len(clippy)):
         outgoinglines.append("".join(outstring))
 
 
-vim.current.buffer.append(outgoinglines)
+        #vim.current.buffer.append(outgoinglines)
+#pos = (vim.current.window.cursor)[0]
+pos = int(vim.eval("a:lastline"))
+newbuff = vim.current.buffer[:pos] + outgoinglines + vim.current.buffer[pos:]
+
+vim.current.buffer[0:len(newbuff)] = newbuff
 EOF
 " Here the python code is closed. We can continue writing VimL or python again.
 endfunction
-command! -nargs=0 Clippy call Clippy()
+command! -range -nargs=* Clippy <line1>,<line2>call Clippy()
 
