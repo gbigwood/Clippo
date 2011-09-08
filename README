@@ -12,7 +12,8 @@ It features both a command line python script and a Vim plugin.
 INSTALLATION
 ============
 
-Copy the .vim script into your .vim/plugins folder.
+Copy the plugin/clippy.vim script into your .vim/plugins
+folder.
 
 REQUIREMENTS
 ============
