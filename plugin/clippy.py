@@ -79,7 +79,7 @@ for line in xrange(len(clippy)):
         #print clippy[line],boxy[line] + (length_of_line * spacer) + 
         #post_text[line]
         s = clippy[line]+" "+boxy[line] + ((length_of_line * spacer) + post_text[line])
-        print s
+        print(s)
     elif line >= 3:#put words
         outstring = []
         outstring.append(clippy[line]+" ")
@@ -96,4 +96,4 @@ for line in xrange(len(clippy)):
             usedstring += len(this_word)+1
         outstring.append((length_of_line - usedstring) * " ")
         outstring.append(post_text[line])
-        print "".join(outstring)
+        print("".join(outstring))
